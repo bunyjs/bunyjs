@@ -1,0 +1,17 @@
+{
+  "name": "@exmaples/basic",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsup && node .",
+    "lint": "eslint --fix"
+  },
+  "dependencies": {
+    "@bunyjs/app": "*",
+    "@bunyjs/logger": "*",
+    "@bunyjs/ioc": "*"
+  },
+  "files": [
+    "dist"
+  ]
+}

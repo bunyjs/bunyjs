@@ -1,0 +1,23 @@
+{
+  "name": "@bunyjs/logger",
+  "version": "0.0.1",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "type": "module",
+  "scripts": {
+    "watch": "tsup --watch",
+    "build": "tsup",
+    "test": "vitest run",
+    "coverage": "vitest --coverage",
+    "ui": "vitest --coverage --ui",
+    "lint": "eslint --fix"
+  },
+  "dependencies": {
+    "@bunyjs/ioc": "^0.0.1",
+    "@bunyjs/app": "^0.0.1",
+    "ansis": "^3.5.2"
+  },
+  "files": [
+    "dist"
+  ]
+}
