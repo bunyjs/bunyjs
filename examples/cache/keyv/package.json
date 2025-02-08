@@ -1,0 +1,15 @@
+{
+  "name": "@example/keyv",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "tsup && node .",
+    "lint": "eslint --fix"
+  },
+  "dependencies": {
+    "@bunyjs/app": "0.0.1-alpha.1",
+    "@bunyjs/ioc": "0.0.1-alpha.1",
+    "@bunyjs/keyv": "0.0.1-alpha.1"
+  },
+  "private": true
+}
