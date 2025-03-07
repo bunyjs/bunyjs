@@ -1,0 +1,24 @@
+{
+  "extends": "@meslzy/tsconfig",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "declaration": true,
+    "baseUrl": "source",
+    "rootDir":"source",
+    "outDir": "dist",
+    "paths": {
+      "~/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "source",
+  ],
+  "exclude": [
+    "dist"
+  ]
+}
