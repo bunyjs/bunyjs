@@ -1,0 +1,16 @@
+{
+  "name": "@example/bull",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "tsup && node .",
+    "lint": "eslint --fix"
+  },
+  "dependencies": {
+    "@bunyjs/app": "0.0.1-alpha.1",
+    "@bunyjs/bull": "0.0.1-alpha.1",
+    "@bunyjs/ioc": "0.0.1-alpha.1",
+    "@bunyjs/redis": "0.0.1-alpha.1"
+  },
+  "private": true
+}

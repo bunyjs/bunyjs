@@ -1,0 +1,24 @@
+{
+  "name": "@bunyjs/ioc",
+  "version": "0.0.1-alpha.1",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "watch": "tsup --watch",
+    "build": "tsup",
+    "lint": "eslint --fix",
+    "test": "vitest run",
+    "coverage": "vitest --coverage",
+    "ui": "vitest --coverage --ui"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

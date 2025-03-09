@@ -1,0 +1,26 @@
+{
+  "name": "@bunyjs/redis",
+  "version": "0.0.1-alpha.1",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "watch": "tsup --watch",
+    "build": "tsup",
+    "lint": "eslint --fix",
+    "test": "vitest run",
+    "coverage": "vitest --coverage",
+    "ui": "vitest --coverage --ui"
+  },
+  "dependencies": {
+    "@bunyjs/app": "0.0.1-alpha.1",
+    "@bunyjs/ioc": "0.0.1-alpha.1",
+    "ioredis": "^5.4.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

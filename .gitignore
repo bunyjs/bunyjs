@@ -1,0 +1,15 @@
+# ide
+.idea/
+.vscode/
+
+# node
+node_modules/
+
+# turbo
+.turbo/
+
+# tsup
+dist/
+
+# vitest
+coverage/

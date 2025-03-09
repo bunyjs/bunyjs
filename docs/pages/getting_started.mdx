@@ -1,0 +1,99 @@
+import { Callout } from "nextra/components";
+
+## Getting Started
+
+<Callout>
+  Before diving into the steps, ensure you have completed the prerequisites outlined in the [Prerequisites](./prerequisites) section.
+</Callout>
+
+In this guide, we'll create a simple yet realistic application using BunyJS to demonstrate its event-driven lifecycle and dependency injection capabilities.
+
+## Step 1: Install Dependencies
+
+Start by installing the required packages:
+
+- `@bunyjs/app`: The application package that provides the event-driven lifecycle.
+- `@bunyjs/ioc`: The container package that provides the dependency injection.
+- `@bunyjs/logger`: The logger package that provides the logging capabilities.
+
+Simply run the following command to install the packages:
+
+```sh npm2yarn
+npm install @bunyjs/app @bunyjs/ioc @bunyjs/logger
+```
+
+
+## Step 2: Create the Application
+
+Next, create the application by defining the application class and its lifecycle methods:
+
+```ts
+import { App, init, start, shutdown, bootstrap } from "@bunyjs/app";
+import { use, usable } from "@bunyjs/ioc";
+import { $Logger } from "@bunyjs/logger";
+
+@usable()
+class Logger extends $Logger {
+}
+
+@usable()
+class Service {
+  @use()
+  logger: Logger;
+
+  @init()
+  async init() {
+    this.logger.info("create connection to database");
+  }
+
+  @shutdown()
+  async shutdown() {
+    this.logger.info("close connection to database");
+  }
+
+  createUser() {
+    this.logger.info("User created!");
+  }
+
+  getUser() {
+    this.logger.info("User fetched!");
+  }
+}
+
+@usable()
+class MyApp extends App {
+  @use()
+  logger: Logger;
+
+  @use()
+  service: Service;
+
+  @bootstrap()
+  async bootstrap() {
+    this.logger.info("MyApp bootstrapped!");
+  }
+
+  @init()
+  async init() {
+    this.logger.info("MyApp initialized!");
+    this.service.createUser();
+  }
+
+  @start()
+  async start() {
+    this.logger.info("MyApp started!");
+    this.service.getUser();
+  }
+
+  @shutdown()
+  async shutdown() {
+    this.logger.info("MyApp shutdown!");
+  }
+}
+
+process.on("beforeExit", async () => {
+  await MyApp.shutdown();
+});
+
+await MyApp.bootstrap();
+```

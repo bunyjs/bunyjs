@@ -1,0 +1,37 @@
+{
+  "sortPackages": true,
+  "sortAz": [
+    "keywords",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies",
+    "optionalDependencies"
+  ],
+  "sortExports": [
+    "import",
+    "require",
+    "types",
+    "default"
+  ],
+  "sortFirst": [
+    "name",
+    "description",
+    "version",
+    "author",
+    "packageManager",
+    "type",
+    "main",
+    "module",
+    "types",
+    "exports",
+    "scripts",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies",
+    "optionalDependencies",
+    "files",
+    "workspaces",
+    "overrides",
+    "private"
+  ]
+}
